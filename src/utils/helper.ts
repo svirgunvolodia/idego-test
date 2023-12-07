@@ -15,7 +15,7 @@ export function parseBiom(biomObject: BiomData): DataRow[] {
     parsedBiomData.push({
       title: title,
       taxId: taxId,
-      abundanceScore: abundanceScore,
+      abundanceScore: +abundanceScore.toFixed(2),
       relativeAbundance: formattedRelativeAbundance,
       uniqueMatchesFrequency: 0
     });

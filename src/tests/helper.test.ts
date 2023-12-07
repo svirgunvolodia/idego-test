@@ -10,7 +10,7 @@ describe('parseBiom', () => {
       const sampleRow = sampleBiomData.rows[index];
       expect(parsedRow.title).toBe(sampleRow.metadata.lineage[7].name);
       expect(parsedRow.taxId).toBe(sampleRow.metadata.lineage[7].tax_id);
-      expect(parsedRow.abundanceScore).toBe(sampleBiomData.data[index][2]);
+      expect(parsedRow.abundanceScore).toBe(+sampleBiomData.data[index][2].toFixed(2));
 
       if (parsedRow.taxId === 575598) {
         expect(parsedRow.relativeAbundance).toBe('< 0.01%');

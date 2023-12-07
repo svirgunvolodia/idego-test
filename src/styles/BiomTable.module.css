@@ -2,7 +2,7 @@
     outline: 2px solid var(--color-table-blue);
     min-width: 650px;
     border-radius: var(--md);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px var(--xs) var(--md);
 }
 
 .tableHead {
