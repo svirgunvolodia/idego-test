@@ -1,0 +1,173 @@
+{
+    "id": "12345-1234-123455",
+    "format": "Biological Observation Matrix 1.0.0",
+    "format_url": "http://biom-format.org",
+    "matrix_type": "sparse",
+    "generated_by": "Deidentified",
+    "date": "2021-04-17T05:32:34.588870",
+    "type": "OTU table",
+    "matrix_element_type": "float",
+    "shape": [
+        2,
+        3
+    ],
+    "data": [
+        [
+            0,
+            0,
+            0.944307
+        ],
+        [
+            0,
+            1,
+            139028.29
+        ]
+    ],
+    "rows": [
+        {
+            "id": "Lactobacillus crispatus SJ 3C US",
+            "metadata": {
+                "taxonomy": [
+                    "Bacteria",
+                    "Firmicutes",
+                    "Bacilli",
+                    "Lactobacillales",
+                    "Lactobacillaceae",
+                    "Lactobacillus",
+                    "Lactobacillus crispatus",
+                    "Lactobacillus crispatus SJ-3C-US"
+                ],
+                "tax_id": 575598,
+                "title": "Lactobacillus crispatus SJ-3C-US",
+                "lineage": [
+                    {
+                        "rank": "superkingdom",
+                        "name": "Bacteria",
+                        "tax_id": 2
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Firmicutes",
+                        "tax_id": 1239
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Bacilli",
+                        "tax_id": 91061
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Lactobacillales",
+                        "tax_id": 186826
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Lactobacillaceae",
+                        "tax_id": 33958
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Lactobacillus",
+                        "tax_id": 1578
+                    },
+                    {
+                        "rank": "species",
+                        "name": "Lactobacillus crispatus",
+                        "tax_id": 47770
+                    },
+                    {
+                        "rank": "strain",
+                        "name": "Lactobacillus crispatus SJ-3C-US",
+                        "tax_id": 575598
+                    }
+                ],
+                "id": "Lactobacillus crispatus SJ 3C US"
+            }
+        },
+        {
+            "id": "Lactobacillus sp UMNPBX1 GCA 002554085.1",
+            "metadata": {
+                "taxonomy": [
+                    "Bacteria",
+                    "Firmicutes",
+                    "Bacilli",
+                    "Lactobacillales",
+                    "Lactobacillaceae",
+                    "Lactobacillus",
+                    "Lactobacillus_u_s",
+                    "Lactobacillus sp. UMNPBX1"
+                ],
+                "tax_id": 2042046,
+                "title": "Lactobacillus sp. UMNPBX1",
+                "lineage": [
+                    {
+                        "rank": "superkingdom",
+                        "name": "Bacteria",
+                        "tax_id": 2
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Firmicutes",
+                        "tax_id": 1239
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Bacilli",
+                        "tax_id": 91061
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Lactobacillales",
+                        "tax_id": 186826
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Lactobacillaceae",
+                        "tax_id": 33958
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Lactobacillus",
+                        "tax_id": 1578
+                    },
+                    {
+                        "rank": "species",
+                        "name": "Lactobacillus_u_s",
+                        "tax_id": 1578
+                    },
+                    {
+                        "rank": "strain",
+                        "name": "Lactobacillus sp. UMNPBX1",
+                        "tax_id": 2042046
+                    }
+                ],
+                "id": "Lactobacillus sp UMNPBX1 GCA 002554085.1",
+                "assembly": "GCA_002554085.1"
+            }
+        }
+    ],
+    "columns": [
+        {
+            "id": "relative_abundance",
+            "metadata": null
+        },
+        {
+            "id": "abundance_score",
+            "metadata": null
+        },
+        {
+            "id": "hit_frequency",
+            "metadata": null
+        }
+    ],
+    "metadata": {
+        "analysis_id": "12345-1234-1237777888",
+        "name": "Quasar analysis",
+        "database": "bacteria",
+        "created": "2021-04-15T09:40:39.804181",
+        "database_feature": "organisms",
+        "biom_version": 3,
+        "filterset_name": "total",
+        "filterset_id": "total"
+    }
+}

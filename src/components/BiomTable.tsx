@@ -25,7 +25,7 @@ function BiomTable() {
         <TableHead>
           <TableRow>
             {columns.map((column) => (
-              <TableCell align="left">{column}</TableCell>
+              <TableCell key={column} align="left">{column}</TableCell>
             ))}
           </TableRow>
         </TableHead>
