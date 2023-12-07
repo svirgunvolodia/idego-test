@@ -21,18 +21,18 @@ function BiomTable() {
   }, [])
 
   return (
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
+      <Table className={styles.table} aria-label="simple table">
+        <TableHead className={styles.tableHead}>
           <TableRow>
             {columns.map((column) => (
-              <TableCell key={column} align="left">{column}</TableCell>
+              <TableCell className={styles.tableHeadCell} key={column} align="left">{column}</TableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
           {biomRows.map((row) => (
-            <TableRow key={row.taxId}>
-              <TableCell component="th" scope="row">
+            <TableRow className={styles.tableRow} key={row.taxId}>
+              <TableCell scope="row">
                 {row.title}
               </TableCell>
               <TableCell align="left">{row.taxId}</TableCell>

@@ -1,4 +1,3 @@
-// parse-biom.test.ts
 import { parseBiom } from '../utils/helper';
 import sampleBiomData from '../data/sample-test-biom.json';
 

@@ -7,7 +7,7 @@
   --xl: calc(var(--base) * 4);   /* 40 */
   --xx: calc(var(--base) * 6.5); /* 65 */
 
-  --color-background-default: #F5F5F5;
-  --color-grey-light: #BBBEC7;
+  --color-table-blue: #06c;
+  --color-table-row: #eeeeee;
 }
 

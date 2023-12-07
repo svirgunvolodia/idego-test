@@ -1,0 +1,39 @@
+.table {
+    outline: 2px solid var(--color-table-blue);
+    min-width: 650px;
+    border-radius: var(--md);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tableHead {
+    background-color: var(--color-table-blue);
+}
+
+.tableHeadCell {
+    font-size: 16px;
+    color: white;
+}
+
+.tableHeadCell:first-child {
+    border-radius: var(--sm) 0 0 0;
+}
+
+.tableHeadCell:last-child {
+    border-radius: 0 var(--sm) 0 0;
+}
+
+.tableRow:nth-of-type(odd) {
+    background-color: var(--color-table-row);
+}
+
+.tableRow:last-child {
+    border-radius: 0 0 var(--sm) var(--sm);
+}
+
+.tableRow:last-child td:first-child {
+    border-radius: 0 0 0 var(--sm);
+}
+
+.tableRow:last-child td:last-child {
+    border-radius: 0 0 var(--sm) 0;
+}
