@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import BiomTable from '../components/BiomTable';
+import axeTest from '../utils/testAxe';
 
 jest.mock('../utils/helper', () => ({
   parseBiom: jest.fn(() => [
@@ -14,9 +15,15 @@ jest.mock('../utils/helper', () => ({
   ]),
 }));
 
+const getComponent = (props = {}) => render((
+  <BiomTable {...props} />
+));
+
+axeTest(getComponent)
+
 describe('BiomTable', () => {
   it('renders table with correct data', () => {
-    const { getByText } = render(<BiomTable />);
+    const { getByText } = getComponent()
 
     expect(getByText('Name')).toBeInTheDocument();
     expect(getByText('Tax ID')).toBeInTheDocument();

@@ -7,7 +7,6 @@
     "test": "jest tests"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.23.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.20",
@@ -20,10 +19,12 @@
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "@types/jest": "^29.5.8",
+    "@types/jest-axe": "^3.5.9",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
+    "jest-axe": "^8.0.0",
     "jest-environment-jsdom-global": "^4.0.0",
     "react-test-renderer": "^18.2.0",
     "ts-jest": "^29.1.1",
