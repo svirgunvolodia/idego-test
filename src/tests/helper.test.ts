@@ -7,16 +7,18 @@ describe('parseBiom', () => {
     expect(parsedData).toHaveLength(sampleBiomData.rows.length);
 
     parsedData.forEach((parsedRow, index) => {
-      const sampleRow = sampleBiomData.rows[index];
-      expect(parsedRow.title).toBe(sampleRow.metadata.lineage[7].name);
-      expect(parsedRow.taxId).toBe(sampleRow.metadata.lineage[7].tax_id);
-      expect(parsedRow.abundanceScore).toBe(+sampleBiomData.data[index][2].toFixed(2));
+      const { lineage } = sampleBiomData.rows[index].metadata;
+      const relativeRow = sampleBiomData.data[index * 3];
+      const abundanceRow = sampleBiomData.data[index * 3 + 1];
+      const frequencyRow = sampleBiomData.data[index * 3 + 2];
 
-      if (parsedRow.taxId === 575598) {
-        expect(parsedRow.relativeAbundance).toBe('< 0.01%');
-      } else {
-        expect(parsedRow.relativeAbundance).toBe('100.00%');
-      }
+      expect(parsedRow.title).toBe(lineage[7].name);
+      expect(parsedRow.taxId).toBe(lineage[7].tax_id);
+      expect(parsedRow.abundanceScore).toBe(+abundanceRow[2].toFixed(2));
+
+      const expectedRelativeAbundance = abundanceRow[2] >= 0.01 ? `${(relativeRow[2] * 100).toFixed(2)}%` : '< 0.01%';
+      expect(parsedRow.relativeAbundance).toBe(expectedRelativeAbundance);
+      expect(parsedRow.uniqueMatchesFrequency).toBe(Math.trunc(frequencyRow[2]));
     });
   });
 });

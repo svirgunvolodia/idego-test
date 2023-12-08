@@ -2,22 +2,26 @@ import { BiomData, DataRow } from "../types/biom";
 
 export function parseBiom(biomObject: BiomData): DataRow[] {
   const TAXONOMIC_LEVEL = 7
-  const parsedBiomData: DataRow[] = [];
-  const totalAbundance = biomObject.data.reduce((total, entry) => total + entry[2], 0);
+  const MATRIX_STEP = 3
 
-  biomObject.rows.forEach((observation, observationIndex) => {
-    const taxId = observation.metadata.lineage[TAXONOMIC_LEVEL].tax_id;
-    const title = observation.metadata.lineage[TAXONOMIC_LEVEL].name;
-    const abundanceScore = biomObject.data[observationIndex][2];
-    const relativeAbundance = (abundanceScore / totalAbundance) * 100;
-    const formattedRelativeAbundance = relativeAbundance < 0.01 ? '< 0.01%' : relativeAbundance.toFixed(2) + '%';
+  const parsedBiomData: DataRow[] = [];
+  
+  biomObject.rows.forEach(({ metadata: { lineage } }, index) => {
+    const taxId = lineage[TAXONOMIC_LEVEL].tax_id;
+    const title = lineage[TAXONOMIC_LEVEL].name;
+
+    const [relativeRow, abundanceRow, frequencyRow] = biomObject.data.slice(index * MATRIX_STEP, (index + 1) * MATRIX_STEP);
+
+    const abundanceScore = +abundanceRow[2].toFixed(2);
+    const formattedRelativeAbundance = (relativeRow[2] >= 0.01) ? `${(relativeRow[2] * 100).toFixed(2)}%` : '< 0.01%';
+    const uniqueMatchesFrequency =Math.trunc(frequencyRow[2])
 
     parsedBiomData.push({
       title: title,
       taxId: taxId,
-      abundanceScore: +abundanceScore.toFixed(2),
+      abundanceScore: abundanceScore, 
       relativeAbundance: formattedRelativeAbundance,
-      uniqueMatchesFrequency: 0
+      uniqueMatchesFrequency: uniqueMatchesFrequency
     });
   });
 
